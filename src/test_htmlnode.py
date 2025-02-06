@@ -81,4 +81,6 @@ class TestParentNode(unittest.TestCase):
         with self.assertRaises(TypeError):
             node = ParentNode("p")
 
-          
+
+if __name__ == "__main__":
+    unittest.main()          
