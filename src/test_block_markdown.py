@@ -51,27 +51,27 @@ class TestBlock_to_block_type(unittest.TestCase):
 
 class TestMarkdown_to_html_node(unittest.TestCase):
     def test_markdown_to_html_node(self):
-        markdown = "#### This *is* a heading\n\nThis is a paragraph of text. It has some **bold** and *italic* words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first list item in a list block\n* This is a list item\n* This is another list item\n"
+        markdown = "#### This _is_ a heading\n\nThis is a paragraph of text. It has some **bold** and _italic_ words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first list item in a list block\n* This is a list item\n* This is another list item\n"
         answer = "<div><h4>This <i>is</i> a heading</h4><p>This is a paragraph of text. It has some <b>bold</b> and <i>italic</i> words inside of it.</p><ol><li>This.</li><li>That</li><li>The other.</li></ol><ul><li>This is the first list item in a list block</li><li>This is a list item</li><li>This is another list item</li></ul></div>"
         self.assertEqual(markdown_to_html_node(markdown).to_html(), answer)
 
     def test_markdown_to_html_node2(self):
-        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and *italic* words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first list item in a list block\n* This is a list item\n* This is another list item\n"
+        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and _italic_ words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first list item in a list block\n* This is a list item\n* This is another list item\n"
         answer = "<div><h4>This is a heading</h4><p>This is a paragraph of text. It has some <b>bold</b> and <i>italic</i> words inside of it.</p><ol><li>This.</li><li>That</li><li>The other.</li></ol><ul><li>This is the first list item in a list block</li><li>This is a list item</li><li>This is another list item</li></ul></div>"
         self.assertEqual(markdown_to_html_node(markdown).to_html(), answer)
 
     def test_markdown_to_html_node3(self):
-        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and *italic* words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
+        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and _italic_ words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
         answer = "<div><h4>This is a heading</h4><p>This is a paragraph of text. It has some <b>bold</b> and <i>italic</i> words inside of it.</p><ol><li>This.</li><li>That</li><li>The other.</li></ol><ul><li>This is the first <b>list item</b> in a list block</li><li>This is a list item</li><li>This is another list item</li></ul></div>"
         self.assertEqual(markdown_to_html_node(markdown).to_html(), answer)
 
     def test_markdown_to_html_node4(self):
-        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and *italic* words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n```This is some code and stuff **testing**\nAnd another line of code```\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
+        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and _italic_ words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n```This is some code and stuff **testing**\nAnd another line of code```\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
         answer = "<div><h4>This is a heading</h4><p>This is a paragraph of text. It has some <b>bold</b> and <i>italic</i> words inside of it.</p><ol><li>This.</li><li>That</li><li>The other.</li></ol><code>This is some code and stuff **testing**\nAnd another line of code</code><ul><li>This is the first <b>list item</b> in a list block</li><li>This is a list item</li><li>This is another list item</li></ul></div>" 
         self.assertEqual(markdown_to_html_node(markdown).to_html(), answer)
 
     def test_markdown_to_html_node5(self):
-        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and *italic* words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n>This is a quote **testing**\n>And another quote\n>Yet again\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
+        markdown = "#### This is a heading\n\nThis is a paragraph of text. It has some **bold** and _italic_ words inside of it.\n\n1. This.\n2. That\n3. The other.\n\n>This is a quote **testing**\n>And another quote\n>Yet again\n\n* This is the first **list item** in a list block\n* This is a list item\n* This is another list item\n"
         answer = "<div><h4>This is a heading</h4><p>This is a paragraph of text. It has some <b>bold</b> and <i>italic</i> words inside of it.</p><ol><li>This.</li><li>That</li><li>The other.</li></ol><blockquote>This is a quote <b>testing</b> And another quote Yet again</blockquote><ul><li>This is the first <b>list item</b> in a list block</li><li>This is a list item</li><li>This is another list item</li></ul></div>"
         self.assertEqual(markdown_to_html_node(markdown).to_html(), answer)
 

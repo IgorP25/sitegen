@@ -16,7 +16,7 @@ class TestMarkdownToHTML(unittest.TestCase):
         md = """
 This is **bolded** paragraph
 
-This is another paragraph with *italic* text and `code` here
+This is another paragraph with _italic_ text and `code` here
 This is the same paragraph on a new line
 
 * This is a list
@@ -27,7 +27,7 @@ This is the same paragraph on a new line
             blocks,
             [
                 "This is **bolded** paragraph",
-                "This is another paragraph with *italic* text and `code` here\nThis is the same paragraph on a new line",
+                "This is another paragraph with _italic_ text and `code` here\nThis is the same paragraph on a new line",
                 "* This is a list\n* with items",
             ],
         )
@@ -39,7 +39,7 @@ This is **bolded** paragraph
 
 
 
-This is another paragraph with *italic* text and `code` here
+This is another paragraph with _italic_ text and `code` here
 This is the same paragraph on a new line
 
 * This is a list
@@ -50,7 +50,7 @@ This is the same paragraph on a new line
             blocks,
             [
                 "This is **bolded** paragraph",
-                "This is another paragraph with *italic* text and `code` here\nThis is the same paragraph on a new line",
+                "This is another paragraph with _italic_ text and `code` here\nThis is the same paragraph on a new line",
                 "* This is a list\n* with items",
             ],
         )
@@ -90,7 +90,7 @@ This is **bolded** paragraph
 text in a p
 tag here
 
-This is another paragraph with *italic* text and `code` here
+This is another paragraph with _italic_ text and `code` here
 
 """
 
@@ -105,7 +105,7 @@ This is another paragraph with *italic* text and `code` here
         md = """
 - This is a list
 - with items
-- and *more* items
+- and _more_ items
 
 1. This is an `ordered` list
 2. with items

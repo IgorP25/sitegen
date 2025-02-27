@@ -33,8 +33,8 @@ class TestSplit_nodes_delimiter(unittest.TestCase):
         self.assertEqual(new_nodes, answer)
 
     def test_split_nodes_delimiter3(self):
-        node = TextNode("This is text with a *italic block* word", TextType.TEXT)
-        new_nodes = split_nodes_delimiter([node], "*", TextType.ITALIC)
+        node = TextNode("This is text with a _italic block_ word", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "_", TextType.ITALIC)
         answer = [
             TextNode("This is text with a ", TextType.TEXT),
             TextNode("italic block", TextType.ITALIC),
@@ -153,7 +153,7 @@ class TestSplit_nodes_link(unittest.TestCase):
 
 class TestText_to_textnodes(unittest.TestCase):
     def test_text_to_textnodes(self):
-        text = "This is **text** with an *italic* word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
+        text = "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
         answer = [
             TextNode("This is ", TextType.TEXT),
             TextNode("text", TextType.BOLD),
