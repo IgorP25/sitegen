@@ -39,7 +39,7 @@ class TestText_node_to_html_node(unittest.TestCase):
     def test_text_node_to_html_node(self):
         node = TextNode("This is a text node", TextType.BOLD)
         html = text_node_to_html_node(node)
-        self.assertEqual(html.to_html(), "<b>This is a text node</b>")
+        self.assertEqual(html.to_html(), "<b>Ths is a text node</b>")
         
     def test_text_node_to_html_node2(self):
         node = TextNode("This is a text node", TextType.ITALIC)
